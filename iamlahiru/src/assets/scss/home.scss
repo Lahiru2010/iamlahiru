@@ -1,0 +1,194 @@
+.home {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  .home-container {
+    text-align: center;
+    padding: 150px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    .main-title {
+      font-size: 46px;
+      font-weight: 600 !important;
+      font-style: normal;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      //   color: #37343d;
+      .text {
+      }
+
+      .highlight {
+        font-weight: bolder !important;
+        color: transparent;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-image: url('../images/abstractgradient.png');
+        background-size: 400px 600px;
+        -webkit-animation: 90s strife infinite linear;
+        animation:
+          90s strife infinite linear,
+          25s filter-rotate infinite linear;
+      }
+
+      @-webkit-keyframes strife {
+        0% {
+          background-position: 90px 90px;
+        }
+
+        100% {
+          background-position: -6000px 4000px;
+        }
+      }
+
+      @keyframes strife {
+        0% {
+          background-position: 100px 100px;
+        }
+
+        100% {
+          background-position: -5020px 4196px;
+        }
+      }
+
+      @-webkit-keyframes filter-rotate {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+
+        50% {
+          filter: hue-rotate(-60deg);
+        }
+
+        100% {
+          filter: hue-rotate(0deg);
+        }
+      }
+
+      @keyframes filter-rotate {
+        0% {
+          filter: hue-rotate(0deg);
+        }
+
+        50% {
+          filter: hue-rotate(-60deg);
+        }
+
+        100% {
+          filter: hue-rotate(0deg);
+        }
+      }
+    }
+
+    .sub-title {
+      font-size: 24px;
+      font-weight: 500;
+      //   color: #37343d;
+    }
+
+    .brain-container {
+      margin-top: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      .desc-item {
+        text-align: left;
+        width: 300px;
+        .desc-title {
+          font-size: 36px;
+          font-weight: 700;
+          //   color: #46434b;
+        }
+
+        .desc-subtitle {
+          font-size: 18px;
+          font-weight: 500;
+          color: #777085;
+        }
+
+        .desc-percentage {
+          font-size: 36px;
+          font-weight: 700;
+          color: #f40a5c;
+        }
+
+        &.left {
+          text-align: right;
+        }
+      }
+
+      .brain-image {
+        img {
+          width: 272px;
+        }
+      }
+    }
+
+    .skills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 80px;
+      font-size: 24px;
+      span {
+        font-weight: 600;
+        &.skill-type {
+          font-weight: 700;
+          color: #9745ff;
+          width: 70px;
+
+          .skill-set {
+            position: relative;
+            .skill {
+              position: absolute;
+              width: fit-content;
+            }
+          }
+        }
+      }
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      margin-top: 100px;
+      .social-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 20px;
+        background-size: contain;
+        transition: transform 0.3s;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-size: 24px;
+        &.in {
+          background-image: url('../images/social/in.png');
+        }
+        &.fb {
+          background-image: url('../images/social/fb.png');
+        }
+        &.email {
+          background-image: url('../images/social/email.png');
+        }
+        &.dribble {
+          background-image: url('../images/social/dribble.png');
+        }
+        &.be {
+          background-image: url('../images/social/be.png');
+        }
+        &:hover {
+          background-position-y: -24px;
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

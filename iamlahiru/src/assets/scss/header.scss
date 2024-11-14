@@ -1,0 +1,30 @@
+body {
+  background-color: #fcfcfc;
+}
+.navbar {
+  background-color: #fcfcfc !important;
+  border-bottom: 1px solid #efefef;
+  .navbar-collapse {
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: #344767 !important;
+          opacity: 0.5;
+          font-size: 16px;
+          font-weight: 500;
+
+          &.active {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+.navbar-brand {
+  .logo {
+    img {
+      width: 46px;
+    }
+  }
+}
