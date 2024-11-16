@@ -1,13 +1,15 @@
 <template>
-  <div class="home">
+  <div class="home" v-bind:style="[!isMobileComp ? { height: windowHeightComp + 'px' } : '']">
     <div class="home-container">
-      <div class="main-title">
-        <div class="text">Hi. I am</div>
-        <div class="highlight">Lahiru</div>
+      <div v-motion-fade :duration="500" style="margin-bottom: 30px">
+        <div class="main-title">
+          <div class="text">Hi. I am</div>
+          <div class="highlight">Lahiru</div>
+        </div>
+        <div class="sub-title">"I craft seamless experiences through creativity and code."</div>
       </div>
-      <div class="sub-title">"I craft seamless experiences through creativity and code."</div>
       <div class="brain-container">
-        <div class="desc-item left" v-motion-slide-visible-right :duration="700" :delay="200">
+        <div class="desc-item left" v-motion-slide-visible-right :duration="700" :delay="500">
           <div class="desc-title">&lt;developer&gt;</div>
           <div class="desc-subtitle">
             Front end developer who writes clean,<br />
@@ -31,11 +33,17 @@
             class="brain-img"
             src="../assets/images/brain.png"
             v-motion-pop-visible
-            :duration="300"
+            :delay="200"
+            :duration="800"
             :hovered="{ scale: 1.1 }"
+            :visibleOnce="{
+              opacity: 1,
+              y: 0,
+            }"
+            true
           />
         </div>
-        <div class="desc-item right" v-motion-slide-visible-left :duration="700" :delay="200">
+        <div class="desc-item right" v-motion-slide-visible-left :duration="700" :delay="500">
           <div class="desc-title">designer</div>
           <div class="desc-subtitle">
             Product designer specialising in <br />UI design and design systems.
@@ -54,19 +62,17 @@
           </div>
         </div>
       </div>
-      <div class="skills">
+      <div class="skills" v-motion-fade :duration="300" :delay="1200">
         <span>I love </span
         ><span class="skill-type">
-          <div v-for="skill in skills" v-bind:key="skill" class="skill-set">
-            <transition transition name="fade" mode="out-in">
-              <div v-if="skill == skills[currentItem]" class="skill">
-                {{ skill }}
-              </div>
-            </transition>
+          <div class="skill-set">
+            <div class="skill">
+              <vue-typewriter-effect :strings="skills" :loop="true" />
+            </div>
           </div>
         </span>
       </div>
-      <div class="social-icons">
+      <div class="social-icons" v-motion-fade :duration="300" :delay="1500">
         <a class="social-icon in" href="https://www.linkedin.com/in/lahirucb/" target="_blank"></a>
         <a class="social-icon fb" href="https://www.facebook.com/LahiruCB/" target="_blank"></a>
         <a class="social-icon email" href="mailto: lahiru.cntr@gmail.com"></a>
@@ -83,10 +89,12 @@
 
 <script>
 import NumberAnimation from 'vue-number-animation'
+import VueTypewriterEffect from 'vue-typewriter-effect'
 export default {
   name: 'home',
   data() {
     return {
+      windowHeight: 0,
       skills: [
         'Javascript',
         'HTML5',
@@ -106,8 +114,15 @@ export default {
   props: {
     msg: String,
   },
-  components: { NumberAnimation },
-
+  components: { NumberAnimation, VueTypewriterEffect },
+  computed: {
+    windowHeightComp: function () {
+      return this.$store.state.windowHeight
+    },
+    isMobileComp: function () {
+      return this.$store.state.isMobile
+    },
+  },
   methods: {
     addTutorial(e) {
       e.preventDefault()
@@ -125,6 +140,7 @@ export default {
   },
   created() {
     this.currentItem = 0
+    this.windowHeight = this.$store.state.windowHeight
     setInterval(() => {
       if (this.currentItem == this.skills.length - 1) {
         this.currentItem = -1

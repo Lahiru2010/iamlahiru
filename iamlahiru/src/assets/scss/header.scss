@@ -2,19 +2,51 @@ body {
   background-color: #fcfcfc;
 }
 .navbar {
-  background-color: #fcfcfc !important;
+  // background-color: #fcfcfc !important;
+  // border-bottom: 1px solid #efefef;
+
+  background-color: rgba(252, 252, 252, 0.349) !important;
   border-bottom: 1px solid #efefef;
+  backdrop-filter: blur(7px);
+  .navbar-toggler {
+    @media (max-width: 992px) {
+      margin-right: 10px;
+    }
+  }
+  .navbar-brand {
+    margin-left: 15px;
+  }
+  .navbar-nav {
+    padding-right: 10px;
+  }
+
   .navbar-collapse {
     .navbar-nav {
+      @media (max-width: 992px) {
+        padding-top: 10px;
+        margin-top: 12px;
+        border-top: 1px solid #eeeeee;
+      }
       .nav-item {
         .nav-link {
           color: #344767 !important;
           opacity: 0.5;
           font-size: 16px;
           font-weight: 500;
+          transition: all 0.3s ease-out;
+          position: relative;
 
+          &:hover {
+            opacity: 1;
+          }
           &.active {
             opacity: 1;
+          }
+
+          @media (max-width: 992px) {
+            font-size: 18px;
+            text-align: left;
+            padding-left: 14px;
           }
         }
       }

@@ -2,7 +2,7 @@
   <div class="header">
     <nav
       class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
-      :class="{ 'navbar-scrolled': darkHeader }"
+      :class="{ 'navbar-scrolled': isScrollDarkComp }"
     >
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
@@ -24,22 +24,32 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                :class="{ active: isHome }"
+                :class="{ active: activePageComp == 1 }"
                 aria-current="page"
-                href="#"
+                href="javascript:;"
                 v-on:click="scrollToHome"
                 >Home</a
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link" :class="{ active: isAbout }" v-on:click="scrollToAbout"
+              <a
+                href="javascript:;"
+                class="nav-link"
+                :class="{ active: activePageComp == 2 }"
+                v-on:click="scrollToAbout"
                 >About</a
               >
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Portfolio</a>
-            </li>
             <li class="nav-item">
+              <a
+                href="javascript:;"
+                class="nav-link"
+                :class="{ active: activePageComp == 3 }"
+                v-on:click="scrollToPortfolio"
+                >Portfolio</a
+              >
+            </li>
+            <!-- <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li> -->
           </ul>
@@ -53,51 +63,89 @@
 export default {
   name: 'HeaderComponent',
   data() {
-    return { windowTop: 0, darkHeader: false, isHome: true, isAbout: false }
+    return {
+      windowTop: 0,
+      darkHeader: false,
+      isHome: false,
+      isAbout: false,
+      isPortfolio: false,
+      clickedPage: 1,
+    }
   },
-  emits: ['scrollToAboutView', 'scrollToHomeView'],
+  emits: ['scrollToAboutView', 'scrollToHomeView', 'scrollToPortfolioView'],
   props: {
     msg: String,
   },
   components: {},
-
+  computed: {
+    isScrollDarkComp: function () {
+      return this.$store.state.isScrollDark
+    },
+    activePageComp: function () {
+      return this.$store.state.activePage
+    },
+    scrollCurrentPageComp: function () {
+      return this.$store.state.scrollCurrentPage
+    },
+  },
   methods: {
+    scrollToPortfolio: function () {
+      this.isHome = false
+      this.isAbout = false
+      this.isPortfolio = true
+
+      this.$emit('scrollToPortfolioView')
+    },
     scrollToAbout: function () {
       this.isHome = false
       this.isAbout = true
+      this.isPortfolio = false
       this.$emit('scrollToAboutView')
     },
     scrollToHome: function () {
       this.isHome = true
       this.isAbout = false
+      this.isPortfolio = false
       this.$emit('scrollToHomeView')
     },
-    handleScroll(event) {
-      this.windowTop = window.top.scrollY
-      console.info(this.windowTop)
-      if (this.windowTop > 1000) {
-        this.darkHeader = true
-      } else {
-        this.darkHeader = false
-      }
-    },
   },
-  created() {
-    window.addEventListener('scroll', this.handleScroll)
-  },
+  created() {},
 }
 </script>
 
 <style lang="scss">
 .header {
+  .navbar-toggler-icon {
+    border-radius: 3px;
+    height: 36px;
+  }
+
+  .navbar-toggler {
+    &:focus {
+      box-shadow: 0 0 0px 1px #ff1e56;
+      border-color: #ff1e56 !important;
+    }
+  }
   .navbar-scrolled {
     transition: all 0.5s;
-    background-color: #1f1f20 !important;
-    border-color: #2e2e2f;
+    background-color: rgba(31, 31, 32, 0.549) !important;
+    border-color: rgba(54, 54, 58, 0.702);
     color: #fff;
+    .navbar-toggler {
+      .navbar-toggler-icon {
+        background: url('../assets/images/nav-bar.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 3px;
+        border-color: #9b9d9f;
+      }
+    }
 
     .navbar-collapse {
       .navbar-nav {
+        @media (max-width: 992px) {
+          border-top: 1px solid #333333;
+        }
         .nav-item {
           * {
             cursor: pointer;

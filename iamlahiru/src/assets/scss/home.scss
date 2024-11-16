@@ -1,8 +1,9 @@
 .home {
-  height: 100vh;
   display: flex;
   align-items: center;
   width: 100%;
+  background-image: url('../images/home_bg.png');
+  // background-size: 100%;
   .home-container {
     text-align: center;
     padding: 150px 0;
@@ -10,6 +11,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    position: relative;
     .main-title {
       font-size: 46px;
       font-weight: 600 !important;
@@ -96,11 +98,12 @@
       justify-content: center;
       align-items: center;
       gap: 30px;
+
       .desc-item {
         text-align: left;
-        width: 300px;
+        width: 420px;
         .desc-title {
-          font-size: 36px;
+          font-size: 72px;
           font-weight: 700;
           //   color: #46434b;
         }
@@ -112,7 +115,7 @@
         }
 
         .desc-percentage {
-          font-size: 36px;
+          font-size: 42px;
           font-weight: 700;
           color: #f40a5c;
         }
@@ -123,6 +126,10 @@
       }
 
       .brain-image {
+        animation-name: floating;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
         img {
           width: 272px;
         }
@@ -134,12 +141,12 @@
       justify-content: center;
       gap: 10px;
       margin-top: 80px;
-      font-size: 24px;
+      font-size: 28px;
       span {
         font-weight: 600;
         &.skill-type {
           font-weight: 700;
-          color: #9745ff;
+          color: #f40a5c;
           width: 70px;
 
           .skill-set {
@@ -190,5 +197,25 @@
         }
       }
     }
+  }
+}
+.floating {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  // margin-left: 30px;
+  // margin-top: 5px;
+}
+
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 15px);
+  }
+  to {
+    transform: translate(0, -0px);
   }
 }
