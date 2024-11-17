@@ -110,7 +110,8 @@ export default {
   padding-top: 150px !important;
 
   @media (max-width: 1600px) {
-    padding-top: 372px !important;
+    padding-top: 122px !important;
+    height: initial !important;
   }
   @media (max-width: 992px) {
     padding-top: 0px !important;
@@ -120,6 +121,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+
     .about-container {
       display: flex;
       padding: 0;
