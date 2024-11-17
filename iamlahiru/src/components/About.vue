@@ -43,7 +43,7 @@
               <div class="para-content">
                 <div class="skill-icons-container">
                   <div class="skill-icon-row">
-                    <div class="skill-icon js" v-tooltip="'Javascript'"></div>
+                    <div class="skill-icon js" v-tooltip="'JavaScript'"></div>
                     <div class="skill-icon html" v-tooltip="'HTML5'"></div>
                     <div class="skill-icon css" v-tooltip="'CSS3'"></div>
                     <div class="skill-icon jquery" v-tooltip="'jQuery'"></div>

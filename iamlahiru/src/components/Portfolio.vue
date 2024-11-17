@@ -59,7 +59,7 @@ export default {
             { label: 'HTML', icon: 'html' },
             { label: 'CSS', icon: 'css' },
             { label: 'Sass', icon: 'sass' },
-            { label: 'Javascript', icon: 'js' },
+            { label: 'JavaScript', icon: 'js' },
             { label: 'jQuery', icon: 'jq' },
           ],
           referenceLink: 'https://loyalty.sampathbank.lk/Ultrarewards',
@@ -81,7 +81,7 @@ export default {
             { label: 'HTML', icon: 'html' },
             { label: 'CSS', icon: 'css' },
             { label: 'Sass', icon: 'sass' },
-            { label: 'Javascript', icon: 'js' },
+            { label: 'JavaScript', icon: 'js' },
             { label: 'jQuery', icon: 'jq' },
             { label: 'Angular', icon: 'ng' },
           ],
@@ -102,7 +102,7 @@ export default {
           devTech: [
             { label: 'HTML', icon: 'html' },
             { label: 'CSS', icon: 'css' },
-            { label: 'Javascript', icon: 'js' },
+            { label: 'JavaScript', icon: 'js' },
             { label: 'Sass', icon: 'sass' },
           ],
           referenceLink: 'https://www.edenwaste.com.au/',
@@ -124,7 +124,7 @@ export default {
             { label: 'HTML', icon: 'html' },
             { label: 'CSS', icon: 'css' },
             { label: 'Sass', icon: 'sass' },
-            { label: 'Javascript', icon: 'js' },
+            { label: 'JavaScript', icon: 'js' },
             { label: 'jQuery', icon: 'jq' },
           ],
           referenceLink: null,
@@ -149,7 +149,7 @@ export default {
             { label: 'HTML', icon: 'html' },
             { label: 'CSS', icon: 'css' },
             { label: 'Sass', icon: 'sass' },
-            { label: 'Javascript', icon: 'js' },
+            { label: 'JavaScript', icon: 'js' },
           ],
           referenceLink: null,
         },
@@ -172,7 +172,7 @@ export default {
             { label: 'HTML', icon: 'html' },
             { label: 'CSS', icon: 'css' },
             { label: 'Sass', icon: 'sass' },
-            { label: 'Javascript', icon: 'js' },
+            { label: 'JavaScript', icon: 'js' },
             { label: 'jQuery', icon: 'jq' },
           ],
           referenceLink: null,
@@ -223,7 +223,7 @@ export default {
         {
           name: 'Realtime switch borad',
           title: 'Realtime switch borad',
-          subTitle: 'Dynamic HTML switch board developed using javascript',
+          subTitle: 'Dynamic HTML switch board developed using javaScript',
           description:
             'This interface is designed and developed to display the status of a real world switch board system. When the actual switches are changed, this application will display the same in the screen realtime. Also it will display the humidity battery level and the signal strength. This is a completely dynamic UI which can change switch state(on/off), wiring system and the temperature values.',
           image: 'https://iamlahiru.com/portfolio-bg/switch.png',
@@ -234,7 +234,7 @@ export default {
             { label: 'HTML', icon: 'html' },
             { label: 'CSS', icon: 'css' },
             { label: 'Sass', icon: 'sass' },
-            { label: 'Javascript', icon: 'js' },
+            { label: 'JavaScript', icon: 'js' },
             { label: 'jQuery', icon: 'jq' },
           ],
           referenceLink: null,
@@ -242,7 +242,7 @@ export default {
         {
           name: 'Dynamic Energy Meter',
           title: 'Dynamic Energy Meter',
-          subTitle: 'Real time synamic energy meter developed using javascript',
+          subTitle: 'Real time synamic energy meter developed using javaScript',
           description:
             'This meter was designed and developed to showcase the RPM(Revolutions Per Minute) and PSI(Pounds per Square Inch) values in real time.',
           image: 'https://iamlahiru.com/portfolio-bg/energy.png',
@@ -256,7 +256,7 @@ export default {
             { label: 'HTML', icon: 'html' },
             { label: 'CSS', icon: 'css' },
             { label: 'Sass', icon: 'sass' },
-            { label: 'Javascript', icon: 'js' },
+            { label: 'JavaScript', icon: 'js' },
             { label: 'jQuery', icon: 'jq' },
           ],
           referenceLink: null,
@@ -392,7 +392,6 @@ export default {
                 width: 100%;
                 min-height: 200px;
                 background-color: #272727;
-                border: 1px solid #333;
                 border-radius: 10px;
                 box-shadow:
                   0 10px 15px -3px #0000001a,
@@ -401,6 +400,7 @@ export default {
                 margin-bottom: 10px;
                 cursor: pointer;
                 background-size: cover;
+                background-position: center;
                 &:hover {
                   transform: perspective(999px) rotateX(7deg) translate3d(0, -4px, 5px);
                 }

@@ -1,29 +1,110 @@
 .home {
-  display: flex;
-  align-items: center;
+  // display: flex;
+  // align-items: center;
   width: 100%;
   background-image: url('../images/home_bg.png');
   // background-size: 100%;
+
+  @media (max-width: 992px) {
+    min-height: 100vh;
+  }
   .home-container {
+    // text-align: center;
+    // padding: 150px 0;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // width: 100%;
+    // position: relative;
+    // transition: all 1000ms ease;
+    // height: 500px;
     text-align: center;
     padding: 150px 0;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     align-items: center;
     width: 100%;
     position: relative;
+    transition: all 1000ms ease;
+    height: 100%;
+    &.expand {
+      height: fit-content;
+    }
+
+    .main-title-box {
+      // transition: all 1s ease;
+      // position: absolute;
+      // top: 20%;
+
+      transition: all 1s ease;
+      position: absolute;
+      top: 50%;
+
+      left: 0;
+      transform: translate(0%, -50%);
+      right: 0;
+      margin: auto;
+      width: fit-content;
+      height: 172px;
+      &.small {
+        top: 250px;
+        bottom: initial;
+      }
+    }
     .main-title {
       font-size: 46px;
+      font-size: 82px;
       font-weight: 600 !important;
       font-style: normal;
       display: flex;
       gap: 10px;
       justify-content: center;
+      width: 610px;
+
+      transition: all 1s ease;
       //   color: #37343d;
+
       .text {
+        // span {
+        //   span {
+        //     line-height: 60px;
+        //     height: 70px;
+        //     display: block;
+        //     float: left;
+        //     min-width: 16px;
+        //   }
+        // }
+      }
+      .highlight {
+        // span {
+        //   span {
+        //     line-height: 60px;
+        //     height: 70px;
+        //     display: block;
+        //     float: left;
+        //     min-width: 16px;
+        //   }
+        // }
+      }
+
+      &.small {
+        font-size: 46px;
+
+        .text {
+          width: fit-content;
+        }
+
+        .highlight {
+          width: fit-content;
+        }
+      }
+
+      .text {
+        width: 270px;
       }
 
       .highlight {
+        width: 235px;
         font-weight: bolder !important;
         color: transparent;
         background-clip: text;
@@ -35,6 +116,10 @@
         animation:
           90s strife infinite linear,
           25s filter-rotate infinite linear;
+
+        span {
+          display: flex;
+        }
       }
 
       @-webkit-keyframes strife {
@@ -89,11 +174,20 @@
     .sub-title {
       font-size: 24px;
       font-weight: 500;
+      width: 610px;
+      text-align: left;
       //   color: #37343d;
+
+      transition: all 1s ease;
+      &.small {
+        font-size: 21px;
+        width: 610px;
+        text-align: center;
+      }
     }
 
     .brain-container {
-      margin-top: 80px;
+      margin-top: 250px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -106,6 +200,10 @@
           font-size: 72px;
           font-weight: 700;
           //   color: #46434b;
+
+          @media (max-width: 1200px) {
+            font-size: 62px;
+          }
         }
 
         .desc-subtitle {
@@ -115,9 +213,10 @@
         }
 
         .desc-percentage {
-          font-size: 42px;
+          font-size: 37px;
           font-weight: 700;
-          color: #f40a5c;
+          opacity: 0.9;
+          color: #344667;
         }
 
         &.left {
@@ -132,6 +231,24 @@
         animation-timing-function: ease-in-out;
         img {
           width: 272px;
+
+          @media (max-width: 1200px) {
+            font-size: 236px;
+          }
+
+          @media (max-width: 992px) {
+            transform: rotate(90deg) !important;
+          }
+        }
+      }
+
+      @media (max-width: 992px) {
+        flex-direction: column;
+        .desc-item {
+          text-align: center;
+          &.left {
+            text-align: center;
+          }
         }
       }
     }
