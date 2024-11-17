@@ -44,8 +44,8 @@ export default {
   },
   mounted() {
     this.onResize()
-
     this.$nextTick(() => {
+      this.scrollToHome()
       window.addEventListener('resize', this.onResize)
       window.addEventListener('scroll', this.handleScroll)
       this.handleScroll()

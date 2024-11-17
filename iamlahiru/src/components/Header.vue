@@ -5,7 +5,7 @@
       :class="{ 'navbar-scrolled': isScrollDarkComp }"
     >
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" v-bind:href="currentUrl">
           <div class="logo"><img src="../assets/images/logo.png" /></div>
         </a>
         <button
@@ -70,6 +70,7 @@ export default {
       isAbout: false,
       isPortfolio: false,
       clickedPage: 1,
+      currentUrl: location.toString(),
     }
   },
   emits: ['scrollToAboutView', 'scrollToHomeView', 'scrollToPortfolioView'],

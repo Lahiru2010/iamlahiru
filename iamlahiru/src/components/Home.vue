@@ -1,5 +1,6 @@
 <template>
   <div class="home" v-bind:style="[!isMobileComp ? { height: windowHeightComp + 'px' } : '']">
+    {{ currentUrl }}
     <div class="home-container" v-bind:class="{ expand: isShowRemainingContent }">
       <div class="main-title-box" v-bind:class="{ small: isShowRemainingContentBefore }">
         <div class="main-title" v-bind:class="{ small: isShowRemainingContentBefore }">
@@ -19,7 +20,7 @@
           </div>
         </div>
         <div>
-          <Transition name="fade">
+          <Transition name="slide-fade">
             <div
               class="sub-title"
               v-bind:class="{ small: isShowRemainingContentBefore }"
@@ -268,6 +269,28 @@ export default {
   opacity: 0;
 }
 .fade-leave-to {
+  opacity: 0;
+}
+
+.fade-slide-up-enter-active {
+  transition: all 0.3 ease;
+}
+
+.fade-slide-up-leave-active {
+  transform: translateY(10px);
+  transition: all 0.3 ease;
+}
+
+.fade-slide-up-enter
+
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(10px);
+  opacity: 0;
+}
+.fade-slide-up-leave-to
+
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(10px);
   opacity: 0;
 }
 </style>

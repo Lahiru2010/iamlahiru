@@ -301,6 +301,8 @@
     .skills {
       display: flex;
       justify-content: center;
+      flex-direction: column;
+      width: 100%;
       gap: 10px;
       margin-top: 80px;
       font-size: 28px;
@@ -314,12 +316,17 @@
           font-weight: 700;
           color: #f40a5c;
           width: 70px;
+          width: 100%;
 
           .skill-set {
             position: relative;
+            width: 100%;
+            display: block;
+            margin-top: -10px;
             .skill {
-              position: absolute;
+              // position: absolute;
               width: fit-content;
+              margin: auto;
             }
           }
         }
