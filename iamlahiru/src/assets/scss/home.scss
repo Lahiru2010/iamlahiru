@@ -53,7 +53,7 @@
     }
     .main-title {
       font-size: 46px;
-      font-size: 82px;
+      font-size: 62px;
       font-weight: 600 !important;
       font-style: normal;
       display: flex;
@@ -100,7 +100,7 @@
       }
 
       .text {
-        width: 270px;
+        width: 206px;
       }
 
       .highlight {
@@ -187,7 +187,7 @@
     }
 
     .brain-container {
-      margin-top: 250px;
+      margin-top: 12%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -197,12 +197,12 @@
         text-align: left;
         width: 420px;
         .desc-title {
-          font-size: 72px;
+          font-size: 56px;
           font-weight: 700;
           //   color: #46434b;
 
           @media (max-width: 1200px) {
-            font-size: 62px;
+            font-size: 56px;
           }
         }
 
@@ -230,10 +230,10 @@
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         img {
-          width: 272px;
+          width: 218px;
 
           @media (max-width: 1200px) {
-            font-size: 236px;
+            font-size: 218px;
           }
 
           @media (max-width: 992px) {
@@ -281,7 +281,7 @@
       display: flex;
       justify-content: center;
       gap: 14px;
-      margin-top: 100px;
+      margin-top: 3%;
       .social-icon {
         width: 24px;
         height: 24px;
