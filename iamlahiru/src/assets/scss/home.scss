@@ -106,6 +106,9 @@
       &.small {
         font-size: 46px;
 
+        @media (max-width: 992px) {
+          font-size: 38px;
+        }
         .text {
           width: fit-content;
           > span {
@@ -205,6 +208,10 @@
         font-size: 21px;
         // width: 610px;
         text-align: center;
+
+        @media (max-width: 992px) {
+          font-size: 16px;
+        }
       }
 
       span {
@@ -236,7 +243,7 @@
           //   color: #46434b;
 
           @media (max-width: 1600px) {
-            font-size: 46px;
+            font-size: 38px;
           }
         }
 
@@ -251,6 +258,9 @@
           font-weight: 700;
           opacity: 0.9;
           color: #344667;
+          @media (max-width: 1600px) {
+            font-size: 32px;
+          }
         }
 
         &.left {
@@ -293,6 +303,10 @@
       gap: 10px;
       margin-top: 80px;
       font-size: 28px;
+
+      @media (max-width: 1600px) {
+        font-size: 20px;
+      }
       span {
         font-weight: 600;
         &.skill-type {
