@@ -127,7 +127,7 @@
       }
 
       .highlight {
-        width: 235px;
+        width: 180px;
         font-weight: bolder !important;
         color: transparent;
         background-clip: text;
@@ -144,6 +144,7 @@
         }
         span {
           display: flex;
+          gap: 1px;
         }
       }
 
