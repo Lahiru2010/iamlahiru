@@ -121,3 +121,22 @@ body {
   transform: none;
   transition: transform 0.15s;
 }
+
+.iml-sub-title {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.iml-sub-paragraph {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.para-content {
+  margin-bottom: 50px;
+  p {
+    font-size: 18px;
+    font-weight: 400;
+  }
+}

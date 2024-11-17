@@ -1,72 +1,227 @@
 <template>
-  <div class="about" v-bind:style="[!isMobileComp ? { height: windowHeightComp + 'px' } : '']">
+  <!-- <div class="about" v-bind:style="[!isMobileComp ? { height: windowHeightComp + 'px' } : '']"> -->
+  <div class="about">
     <div class="about-page" v-motion-slide-visible-bottom :duration="800" :delay="200">
       <div class="about-container">
-        <div class="about-details-container">
-          <div class="iml-section">
-            <div class="iml-section-inner">
-              <div class="iml-section-left">
-                <div class="iml-sub-title">Want to know a little about me?</div>
-                <div class="para-content">
-                  <p>
-                    From a young age, I've been captivated by the world of creative arts, drawn to
-                    the colors, forms, and designs that spark imagination and bring ideas to life.
-                    This early passion naturally evolved into a love for UI/UX design—a field where
-                    creativity and functionality meet. I always dreamed of a career where I could
-                    blend my artistic instincts with my technical skills, designing interfaces that
-                    are both beautiful and seamlessly functional.
-                  </p>
-                  <p>
-                    Since entering the IT field in 2014, I’ve dedicated over nine years to refining
-                    my skills in front-end development and UI/UX design. With a deep-rooted passion
-                    for both design and coding, I find joy in creating seamless, impactful digital
-                    experiences that feel intuitive and engaging. This blend of creativity and
-                    technical expertise has become my signature, guiding me as I continue to craft
-                    user-centered solutions that reflect my vision and dedication.
-                  </p>
+        <div class="about-section">
+          <div class="about-details-container">
+            <div class="iml-section">
+              <div class="iml-section-inner">
+                <div class="iml-section-left">
+                  <div class="iml-sub-title">Want to know a little about me?</div>
+                  <div class="para-content">
+                    <p>
+                      From a young age, I've been captivated by the world of creative arts, drawn to
+                      the colors, forms, and designs that spark imagination and bring ideas to life.
+                      This early passion naturally evolved into a love for UI/UX design—a field
+                      where creativity and functionality meet. I always dreamed of a career where I
+                      could blend my artistic instincts with my technical skills, designing
+                      interfaces that are both beautiful and seamlessly functional.
+                    </p>
+                    <p>
+                      Since entering the IT field in 2014, I’ve dedicated over nine years to
+                      refining my skills in front-end development and UI/UX design. With a
+                      deep-rooted passion for both design and coding, I find joy in creating
+                      seamless, impactful digital experiences that feel intuitive and engaging. This
+                      blend of creativity and technical expertise has become my signature, guiding
+                      me as I continue to craft user-centered solutions that reflect my vision and
+                      dedication.
+                    </p>
+                  </div>
+                </div>
+                <div class="iml-section-right">
+                  <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
                 </div>
               </div>
-              <div class="iml-section-right">
-                <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
-              </div>
+              <a
+                href="https://iamlahiru.com/resume/Resume_Lahiru_Chathuranga.pdf"
+                target="_blank"
+                class="btn-resume"
+                >My Resume</a
+              >
             </div>
-            <a
-              href="https://iamlahiru.com/resume/Resume_Lahiru_Chathuranga.pdf"
-              target="_blank"
-              class="btn-resume"
-              >My Resume</a
-            >
-          </div>
-          <div class="iml-section">
-            <div class="iml-section-left">
-              <div class="iml-sub-title">Tools behind my pixel magic.</div>
-              <div class="para-content">
-                <div class="skill-icons-container">
-                  <div class="skill-icon-row">
-                    <div class="skill-icon js" v-tooltip="'JavaScript'"></div>
-                    <div class="skill-icon html" v-tooltip="'HTML5'"></div>
-                    <div class="skill-icon css" v-tooltip="'CSS3'"></div>
-                    <div class="skill-icon jquery" v-tooltip="'jQuery'"></div>
-                    <div class="skill-icon vue" v-tooltip="'Vue.js'"></div>
-                    <div class="skill-icon angular" v-tooltip="'Angular'"></div>
-                    <div class="skill-icon react" v-tooltip="'React'"></div>
-                    <div class="skill-icon github" v-tooltip="'github'"></div>
-                    <div class="skill-icon npm" v-tooltip="'npm'"></div>
-                    <div class="skill-icon sass" v-tooltip="'Sass'"></div>
-                    <div class="skill-icon bootstrap" v-tooltip="'Bootstrap'"></div>
-                    <div class="skill-icon vscode" v-tooltip="'Visual Studio Code'"></div>
-                    <div class="skill-icon ps" v-tooltip="'Adobe Photoshop'"></div>
-                    <div class="skill-icon ai" v-tooltip="'Adobe Illustrator'"></div>
-                    <div class="skill-icon xd" v-tooltip="'Adobe XD'"></div>
-                    <div class="skill-icon figma" v-tooltip="'Figma'"></div>
+            <div class="iml-section">
+              <div class="iml-section-left">
+                <div class="iml-sub-title">Tools behind my pixel magic.</div>
+                <div class="para-content">
+                  <div class="skill-icons-container">
+                    <div class="skill-icon-row">
+                      <div class="skill-icon js" v-tooltip="'JavaScript'"></div>
+                      <div class="skill-icon html" v-tooltip="'HTML5'"></div>
+                      <div class="skill-icon css" v-tooltip="'CSS3'"></div>
+                      <div class="skill-icon jquery" v-tooltip="'jQuery'"></div>
+                      <div class="skill-icon vue" v-tooltip="'Vue.js'"></div>
+                      <div class="skill-icon angular" v-tooltip="'Angular'"></div>
+                      <div class="skill-icon react" v-tooltip="'React'"></div>
+                      <div class="skill-icon github" v-tooltip="'github'"></div>
+                      <div class="skill-icon npm" v-tooltip="'npm'"></div>
+                      <div class="skill-icon sass" v-tooltip="'Sass'"></div>
+                      <div class="skill-icon bootstrap" v-tooltip="'Bootstrap'"></div>
+                      <div class="skill-icon vscode" v-tooltip="'Visual Studio Code'"></div>
+                      <div class="skill-icon ps" v-tooltip="'Adobe Photoshop'"></div>
+                      <div class="skill-icon ai" v-tooltip="'Adobe Illustrator'"></div>
+                      <div class="skill-icon xd" v-tooltip="'Adobe XD'"></div>
+                      <div class="skill-icon figma" v-tooltip="'Figma'"></div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <div class="image-container">
+            <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
+          </div>
         </div>
-        <div class="image-container">
-          <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
+
+        <div class="journey-container">
+          <div class="iml-sub-title">A journey defined by growth.</div>
+          <div class="iml-sub-paragraph">
+            <p>
+              Here’s a glimpse of my career: I’ve worked with multidisciplinary companies on diverse
+              web products.
+            </p>
+          </div>
+          <div class="jurney-set">
+            <div class="journey-set-row first">
+              <div class="journey-item up">
+                <div class="journey-item-content">
+                  <div class="item-right">
+                    <div class="item-icon baby"></div>
+                    <div class="item-details">
+                      <div class="item-main-title">Hello World</div>
+                      <div class="item-sub-title">Earth smells good!</div>
+                    </div>
+                  </div>
+                  <div class="item-left">
+                    <div class="item-year">1989</div>
+                  </div>
+                </div>
+                <div class="journey-item-line"></div>
+              </div>
+
+              <div class="journey-item down">
+                <div class="journey-item-line"></div>
+                <div class="journey-item-content">
+                  <div class="item-left">
+                    <div class="item-year">2008</div>
+                  </div>
+                  <div class="item-right">
+                    <div class="item-icon school"></div>
+                    <div class="item-details">
+                      <div class="item-main-title">Left School</div>
+                      <div class="item-sub-title">Nalanda College</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-item up">
+                <div class="journey-item-content">
+                  <div class="item-right">
+                    <div class="item-icon graduate"></div>
+                    <div class="item-details">
+                      <div class="item-main-title">Graduated</div>
+                      <div class="item-sub-title">
+                        Sri Lanka Institute of Information Technology
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item-left">
+                    <div class="item-year">2013</div>
+                  </div>
+                </div>
+                <div class="journey-item-line"></div>
+              </div>
+
+              <div class="journey-item down">
+                <div class="journey-item-line"></div>
+                <div class="journey-item-content">
+                  <div class="item-left">
+                    <div class="item-year">2013</div>
+                  </div>
+                  <div class="item-right">
+                    <div class="item-icon employee"></div>
+                    <div class="item-details">
+                      <div class="item-main-title">UI/UX Engineer</div>
+                      <div class="item-sub-title">BPO Connect</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="journey-set-row">
+              <div class="journey-item up order-4">
+                <div class="journey-item-content">
+                  <div class="item-right">
+                    <div class="item-icon employee"></div>
+                    <div class="item-details">
+                      <div class="item-main-title">Software Engineer</div>
+                      <div class="item-sub-title">MillenniumIT</div>
+                    </div>
+                  </div>
+                  <div class="item-left">
+                    <div class="item-year">2014</div>
+                  </div>
+                </div>
+                <div class="journey-item-line"></div>
+              </div>
+
+              <div class="journey-item down order-3">
+                <div class="journey-item-line"></div>
+                <div class="journey-item-content">
+                  <div class="item-left">
+                    <div class="item-year">2017</div>
+                  </div>
+                  <div class="item-right">
+                    <div class="item-icon employee"></div>
+                    <div class="item-details">
+                      <div class="item-main-title">Senior UI/UX Engineer</div>
+                      <div class="item-sub-title">findmyfare</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-item up order-2">
+                <div class="journey-item-content">
+                  <div class="item-right">
+                    <div class="item-icon employee"></div>
+                    <div class="item-details">
+                      <div class="item-main-title">Senior UI/UX Engineer</div>
+                      <div class="item-sub-title">Creative Software</div>
+                    </div>
+                  </div>
+                  <div class="item-left">
+                    <div class="item-year">2018</div>
+                  </div>
+                </div>
+                <div class="journey-item-line"></div>
+              </div>
+
+              <div class="journey-item down order-1">
+                <div class="journey-item-line last"></div>
+                <div class="journey-item-content">
+                  <div class="item-left">
+                    <div class="item-year">2021</div>
+                  </div>
+                  <div class="item-right">
+                    <div class="item-icon employee"></div>
+                    <div class="item-details">
+                      <div class="item-main-title">Associate Lead UI/UX Engineer</div>
+                      <div class="item-sub-title">Creative Software</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="journey-item down order-0">
+                <div class="journey-item-line last-item"></div>
+                <div class="journey-item-content">
+                  <div class="item-left"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -125,6 +280,10 @@ export default {
     .about-container {
       display: flex;
       padding: 0;
+      flex-direction: column;
+      .about-section {
+        display: flex;
+      }
       .about-details-container {
         width: 70%;
         padding-right: 120px;
@@ -166,19 +325,6 @@ export default {
             }
           }
           .iml-section-left {
-            .iml-sub-title {
-              font-size: 26px;
-              font-weight: 500;
-              margin-bottom: 30px;
-            }
-
-            .para-content {
-              margin-bottom: 50px;
-              p {
-                font-size: 18px;
-                font-weight: 400;
-              }
-            }
             .skill-icons-container {
               .skill-icon-row {
                 display: flex;
@@ -306,7 +452,210 @@ export default {
           width: 100%;
         }
       }
+
+      .journey-container {
+        .jurney-set {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          width: 100%;
+          height: fit-content;
+          position: relative;
+          padding-top: 30px;
+          .journey-set-row {
+            display: flex;
+            height: 200px;
+
+            &:after {
+              content: '';
+              width: 1px;
+              height: 115px;
+              position: absolute;
+              background-color: #fff;
+              right: 0;
+              bottom: 102px;
+              opacity: 0.2;
+            }
+            &.first {
+              &:after {
+                top: 128px;
+              }
+            }
+          }
+          .journey-item {
+            width: 25%;
+            position: relative;
+
+            .order-0 {
+              order: 0;
+            }
+            .order-1 {
+              order: 1;
+            }
+            .order-2 {
+              order: 2;
+            }
+            .order-3 {
+              order: 3;
+            }
+            .order-4 {
+              order: 4;
+            }
+
+            &.down {
+              // margin-top: 55px;
+
+              .journey-item-content {
+                top: 108px;
+
+                .item-left {
+                  width: 38px;
+                  height: 20px;
+                  .item-year {
+                    position: absolute;
+                    font-size: 16px;
+                    font-weight: 600;
+                    top: 0;
+                    bottom: initial;
+                  }
+                }
+
+                .item-right {
+                  .item-icon {
+                    width: 30px;
+                    height: 50px;
+                    position: absolute;
+                    top: initial;
+                    bottom: 0;
+                  }
+                }
+              }
+            }
+            .journey-item-content {
+              display: flex;
+              flex-direction: column;
+              // align-items: center;
+              gap: 3px;
+              position: absolute;
+              width: 500px;
+              top: 14px;
+
+              .item-left {
+                width: 38px;
+                height: 20px;
+
+                .item-year {
+                  position: absolute;
+                  font-size: 16px;
+                  font-weight: 600;
+                  bottom: 0;
+                }
+              }
+
+              .item-right {
+                .item-icon {
+                  width: 30px;
+                  height: 50px;
+                  position: absolute;
+                  top: 0;
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  &.baby {
+                    background-image: url('../assets/images/journey/icon-baby.png');
+                  }
+
+                  &.school {
+                    background-image: url('../assets/images/journey/icon-school.png');
+                  }
+
+                  &.graduate {
+                    background-image: url('../assets/images/journey/icon-graduate.png');
+                  }
+
+                  &.employee {
+                    background-image: url('../assets/images/journey/icon-employee.png');
+                  }
+                }
+                .item-details {
+                  margin-left: 38px;
+                  .item-main-title {
+                    font-size: 20px;
+                    font-weight: 500;
+                    line-height: 24px;
+                  }
+
+                  .item-sub-title {
+                    font-size: 15px;
+                    font-weight: 400;
+                    opacity: 0.8;
+                  }
+                }
+              }
+            }
+
+            .journey-item-line {
+              position: relative;
+              width: 100%;
+              height: 15px;
+              margin: 10px 0;
+              position: absolute;
+              top: 80px;
+
+              &:before {
+                content: '';
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                background-color: #fff;
+                border-radius: 10px;
+                border: 3px solid #f40a5c;
+                left: 7px;
+              }
+
+              &.last-item {
+                &:before {
+                  content: '';
+                  display: none;
+                }
+              }
+              &.last {
+                &:before {
+                  animation: pulse-animation 2s infinite;
+                }
+              }
+              &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+                width: calc(100% - 30px);
+                height: 1px;
+                background-color: #fff;
+                margin: auto 30px;
+                opacity: 0.2;
+              }
+
+              &.last-item {
+                &:after {
+                  width: 30px;
+                  right: -30px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
+  }
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px #f40a5c;
+  }
+  100% {
+    box-shadow: 0 0 0 30px #f40a5c00;
   }
 }
 </style>
