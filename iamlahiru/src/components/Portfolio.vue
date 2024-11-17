@@ -340,10 +340,11 @@ export default {
 .portfolio {
   background-color: #1f1f20;
   background: linear-gradient(90deg, rgb(24 23 29) 0%, rgb(34 34 37) 49%, rgb(39 39 47) 100%);
-  padding: 196px 42px !important;
+  padding: 0 42px !important;
   color: #ffffff;
   display: flex;
   justify-content: center;
+  padding-top: 150px !important;
   @media (max-width: 992px) {
     padding: 118px 0;
     padding: 118px 42px 42px 42px !important;
