@@ -107,6 +107,11 @@ export default {
   color: #ffffff;
   display: flex;
   justify-content: center;
+  padding-top: 250px !important;
+
+  @media (max-width: 992px) {
+    padding-top: 0px !important;
+  }
   .about-page {
     max-width: 1400px;
     display: flex;

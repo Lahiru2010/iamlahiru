@@ -27,6 +27,10 @@
     position: relative;
     transition: all 1000ms ease;
     height: 100%;
+
+    @media (max-width: 992px) {
+      padding: 236px 0;
+    }
     &.expand {
       height: fit-content;
     }
@@ -46,9 +50,17 @@
       margin: auto;
       width: fit-content;
       height: 172px;
+
+      @media (max-width: 992px) {
+        top: 100%;
+      }
       &.small {
-        top: 21%;
         bottom: initial;
+
+        top: 245px;
+        @media (max-width: 1500px) {
+          top: 200px;
+        }
       }
     }
     .main-title {
@@ -59,7 +71,7 @@
       display: flex;
       gap: 10px;
       justify-content: center;
-      width: 610px;
+      // width: 610px;
 
       transition: all 1s ease;
       //   color: #37343d;
@@ -116,7 +128,9 @@
         animation:
           90s strife infinite linear,
           25s filter-rotate infinite linear;
-
+        @media (max-width: 992px) {
+          width: 180px;
+        }
         span {
           display: flex;
         }
@@ -174,15 +188,24 @@
     .sub-title {
       font-size: 24px;
       font-weight: 500;
-      width: 610px;
-      text-align: left;
+      // width: 610px;
+      text-align: center;
       //   color: #37343d;
 
       transition: all 1s ease;
       &.small {
         font-size: 21px;
-        width: 610px;
+        // width: 610px;
         text-align: center;
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        span {
+          display: block;
+          min-width: 5px;
+        }
       }
     }
 
@@ -193,6 +216,9 @@
       align-items: center;
       gap: 30px;
 
+      @media (max-width: 1200px) {
+        margin-top: 15%;
+      }
       .desc-item {
         text-align: left;
         width: 420px;
@@ -201,8 +227,8 @@
           font-weight: 700;
           //   color: #46434b;
 
-          @media (max-width: 1200px) {
-            font-size: 56px;
+          @media (max-width: 1500px) {
+            font-size: 46px;
           }
         }
 
@@ -230,10 +256,10 @@
         animation-iteration-count: infinite;
         animation-timing-function: ease-in-out;
         img {
-          width: 218px;
+          width: 262px;
 
-          @media (max-width: 1200px) {
-            font-size: 218px;
+          @media (max-width: 1500px) {
+            width: 218px;
           }
 
           @media (max-width: 992px) {

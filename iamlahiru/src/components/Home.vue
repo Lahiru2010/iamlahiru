@@ -18,12 +18,16 @@
             </TransitionGroup>
           </div>
         </div>
-        <div class="sub-title" v-bind:class="{ small: isShowRemainingContentBefore }">
-          <TransitionGroup name="fade" tag="span">
-            <span v-for="item in mainSubTitlePartArray" :key="item">
-              {{ item }}
-            </span>
-          </TransitionGroup>
+        <div>
+          <Transition name="fade">
+            <div
+              class="sub-title"
+              v-bind:class="{ small: isShowRemainingContentBefore }"
+              v-if="isShowSubTitle"
+            >
+              I craft seamless experiences through creativity and code.
+            </div>
+          </Transition>
         </div>
       </div>
       <div>
@@ -132,6 +136,7 @@ export default {
     return {
       windowHeight: 0,
       isShowRemainingContent: false,
+      isShowSubTitle: false,
       isShowRemainingContentBefore: false,
       isShowRemainingContentAfter: false,
 
@@ -233,15 +238,18 @@ export default {
     }
 
     setTimeout(() => {
+      this.isShowSubTitle = true
+    }, 3000)
+    setTimeout(() => {
       this.isShowRemainingContentBefore = true
-    }, 6500)
+    }, 5000)
     setTimeout(() => {
       this.isShowRemainingContent = true
-    }, 7000)
+    }, 5500)
 
-    // setTimeout(() => {
-    //   this.isShowRemainingContentAfter = true
-    // }, 7550)
+    setTimeout(() => {
+      this.isShowRemainingContentAfter = true
+    }, 7550)
   },
 }
 </script>
