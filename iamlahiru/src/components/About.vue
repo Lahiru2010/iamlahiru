@@ -83,7 +83,7 @@
           </div>
           <div class="jurney-set">
             <div class="journey-set-row first">
-              <div class="journey-item up">
+              <div class="journey-item up width-45">
                 <div class="journey-item-content">
                   <div class="item-right">
                     <div class="item-icon baby"></div>
@@ -102,10 +102,10 @@
               <div class="journey-item down">
                 <div class="journey-item-line"></div>
                 <div class="journey-item-content">
-                  <div class="item-left">
+                  <div class="item-left content-order-0">
                     <div class="item-year">2008</div>
                   </div>
-                  <div class="item-right">
+                  <div class="item-right content-order-1">
                     <div class="item-icon school"></div>
                     <div class="item-details">
                       <div class="item-main-title">Left School</div>
@@ -115,7 +115,7 @@
                 </div>
               </div>
 
-              <div class="journey-item up">
+              <div class="journey-item up width-14">
                 <div class="journey-item-content">
                   <div class="item-right">
                     <div class="item-icon graduate"></div>
@@ -136,10 +136,10 @@
               <div class="journey-item down">
                 <div class="journey-item-line"></div>
                 <div class="journey-item-content">
-                  <div class="item-left">
+                  <div class="item-left content-order-0">
                     <div class="item-year">2013</div>
                   </div>
-                  <div class="item-right">
+                  <div class="item-right content-order-1">
                     <div class="item-icon employee"></div>
                     <div class="item-details">
                       <div class="item-main-title">UI/UX Engineer</div>
@@ -150,7 +150,7 @@
               </div>
             </div>
             <div class="journey-set-row">
-              <div class="journey-item up order-4">
+              <div class="journey-item up item-order-4 width-30">
                 <div class="journey-item-content">
                   <div class="item-right">
                     <div class="item-icon employee"></div>
@@ -166,13 +166,13 @@
                 <div class="journey-item-line"></div>
               </div>
 
-              <div class="journey-item down order-3">
+              <div class="journey-item down item-order-3 width-36">
                 <div class="journey-item-line"></div>
                 <div class="journey-item-content">
-                  <div class="item-left">
+                  <div class="item-left content-order-0">
                     <div class="item-year">2017</div>
                   </div>
-                  <div class="item-right">
+                  <div class="item-right content-order-1">
                     <div class="item-icon employee"></div>
                     <div class="item-details">
                       <div class="item-main-title">Senior UI/UX Engineer</div>
@@ -182,7 +182,7 @@
                 </div>
               </div>
 
-              <div class="journey-item up order-2">
+              <div class="journey-item up item-order-2 width-15">
                 <div class="journey-item-content">
                   <div class="item-right">
                     <div class="item-icon employee"></div>
@@ -198,23 +198,24 @@
                 <div class="journey-item-line"></div>
               </div>
 
-              <div class="journey-item down order-1">
+              <div class="journey-item down item-order-1">
                 <div class="journey-item-line last"></div>
                 <div class="journey-item-content">
-                  <div class="item-left">
+                  <div class="item-left content-order-0">
                     <div class="item-year">2021</div>
                   </div>
-                  <div class="item-right">
+                  <div class="item-right content-order-1">
                     <div class="item-icon employee"></div>
                     <div class="item-details">
                       <div class="item-main-title">Associate Lead UI/UX Engineer</div>
                       <div class="item-sub-title">Creative Software</div>
+                      <div class="item-sub-label">Current Position</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="journey-item down order-0">
+              <div class="journey-item down item-order-0 width-80p">
                 <div class="journey-item-line last-item"></div>
                 <div class="journey-item-content">
                   <div class="item-left"></div>
@@ -461,62 +462,201 @@ export default {
           width: 100%;
           height: fit-content;
           position: relative;
-          padding-top: 30px;
+          padding-top: 50px;
+          overflow: hidden;
+
           .journey-set-row {
             display: flex;
-            height: 200px;
+            height: 212px;
 
+            @media (max-width: 768px) {
+              flex-direction: column;
+              height: fit-content;
+              gap: 50px;
+              padding: 0 0px;
+            }
             &:after {
               content: '';
               width: 1px;
-              height: 115px;
+              height: 121px;
               position: absolute;
               background-color: #fff;
               right: 0;
-              bottom: 102px;
+              bottom: 114px;
               opacity: 0.2;
+
+              @media (max-width: 768px) {
+                display: none;
+              }
             }
             &.first {
               &:after {
-                top: 128px;
+                top: 148px;
               }
             }
-          }
-          .journey-item {
-            width: 25%;
-            position: relative;
 
-            .order-0 {
-              order: 0;
-            }
-            .order-1 {
-              order: 1;
-            }
-            .order-2 {
-              order: 2;
-            }
-            .order-3 {
-              order: 3;
-            }
-            .order-4 {
-              order: 4;
-            }
+            .journey-item {
+              width: 25%;
+              position: relative;
+              &.width-45 {
+                width: 45%;
+              }
 
-            &.down {
-              // margin-top: 55px;
+              &.width-14 {
+                width: 14%;
+              }
 
+              &.width-30 {
+                width: 30%;
+              }
+
+              &.width-36 {
+                width: 36%;
+              }
+
+              &.width-15 {
+                width: 15%;
+              }
+
+              &.width-80p {
+                width: 80px;
+              }
+
+              &.item-order-0 {
+                order: 0;
+              }
+              &.item-order-1 {
+                order: 1;
+              }
+              &.item-order-2 {
+                order: 2;
+              }
+              &.item-order-3 {
+                order: 3;
+              }
+              &.item-order-4 {
+                order: 4;
+              }
+
+              @media (max-width: 768px) {
+                &.width-45 {
+                  width: 100%;
+                }
+
+                &.width-14 {
+                  width: 100%;
+                }
+
+                &.width-30 {
+                  width: 100%;
+                }
+
+                &.width-36 {
+                  width: 100%;
+                }
+
+                &.width-15 {
+                  width: 100%;
+                }
+
+                &.width-80p {
+                  width: 100%;
+                }
+
+                &.item-order-0 {
+                  order: 4 !important;
+                }
+                &.item-order-1 {
+                  order: 3 !important;
+                }
+                &.item-order-2 {
+                  order: 2 !important;
+                }
+                &.item-order-3 {
+                  order: 1 !important;
+                }
+                &.item-order-4 {
+                  order: 0 !important;
+                }
+              }
+              &.down {
+                // margin-top: 55px;
+
+                .journey-item-content {
+                  top: 108px;
+
+                  .content-order-0 {
+                    order: 0;
+                  }
+                  .content-order-1 {
+                    order: 1;
+                  }
+                  @media (max-width: 768px) {
+                    .content-order-0 {
+                      order: 1;
+                    }
+                    .content-order-1 {
+                      order: 0;
+                    }
+                    position: relative;
+                    top: initial;
+                  }
+                  .item-left {
+                    width: 38px;
+                    height: 20px;
+                    .item-year {
+                      position: absolute;
+                      font-size: 16px;
+                      font-weight: 600;
+                      top: 0;
+                      bottom: initial;
+
+                      @media (max-width: 768px) {
+                        position: relative;
+                        top: -6px;
+                      }
+                    }
+                  }
+
+                  .item-right {
+                    .item-icon {
+                      width: 30px;
+                      height: 50px;
+                      position: absolute;
+                      top: initial;
+                      bottom: 0;
+
+                      @media (max-width: 768px) {
+                        top: 0;
+                      }
+                    }
+                  }
+                }
+              }
               .journey-item-content {
-                top: 108px;
+                display: flex;
+                flex-direction: column;
+                // align-items: center;
+                gap: 3px;
+                position: absolute;
+                width: 500px;
+                top: 14px;
 
+                @media (max-width: 768px) {
+                  position: relative;
+                  top: initial;
+                }
                 .item-left {
                   width: 38px;
                   height: 20px;
+                  @media (max-width: 768px) {
+                    margin-left: 54px;
+                  }
                   .item-year {
                     position: absolute;
                     font-size: 16px;
                     font-weight: 600;
-                    top: 0;
-                    bottom: initial;
+                    bottom: 0;
                   }
                 }
 
@@ -525,121 +665,126 @@ export default {
                     width: 30px;
                     height: 50px;
                     position: absolute;
-                    top: initial;
-                    bottom: 0;
+                    top: 0;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    @media (max-width: 768px) {
+                      margin-left: 54px;
+                    }
+                    &.baby {
+                      background-image: url('../assets/images/journey/icon-baby.png');
+                    }
+
+                    &.school {
+                      background-image: url('../assets/images/journey/icon-school.png');
+                    }
+
+                    &.graduate {
+                      background-image: url('../assets/images/journey/icon-graduate.png');
+                    }
+
+                    &.employee {
+                      background-image: url('../assets/images/journey/icon-employee.png');
+                    }
+                  }
+                  .item-details {
+                    margin-left: 38px;
+                    position: relative;
+
+                    @media (max-width: 768px) {
+                      margin-left: 95px;
+                    }
+                    .item-main-title {
+                      font-size: 18px;
+                      font-weight: 500;
+                      line-height: 24px;
+                    }
+
+                    .item-sub-title {
+                      font-size: 15px;
+                      font-weight: 400;
+                      opacity: 0.8;
+                    }
+                    .item-sub-label {
+                      font-size: 11px;
+                      background-color: #f40a5c;
+                      color: #fff;
+                      width: fit-content;
+                      border-radius: 50px;
+                      font-weight: 500;
+                      padding: 1px 8px;
+                      position: absolute;
+                      line-height: 19px;
+                      top: 53px;
+                    }
                   }
                 }
               }
-            }
-            .journey-item-content {
-              display: flex;
-              flex-direction: column;
-              // align-items: center;
-              gap: 3px;
-              position: absolute;
-              width: 500px;
-              top: 14px;
 
-              .item-left {
-                width: 38px;
-                height: 20px;
-
-                .item-year {
-                  position: absolute;
-                  font-size: 16px;
-                  font-weight: 600;
-                  bottom: 0;
-                }
-              }
-
-              .item-right {
-                .item-icon {
-                  width: 30px;
-                  height: 50px;
-                  position: absolute;
-                  top: 0;
-                  background-position: center;
-                  background-repeat: no-repeat;
-                  &.baby {
-                    background-image: url('../assets/images/journey/icon-baby.png');
-                  }
-
-                  &.school {
-                    background-image: url('../assets/images/journey/icon-school.png');
-                  }
-
-                  &.graduate {
-                    background-image: url('../assets/images/journey/icon-graduate.png');
-                  }
-
-                  &.employee {
-                    background-image: url('../assets/images/journey/icon-employee.png');
-                  }
-                }
-                .item-details {
-                  margin-left: 38px;
-                  .item-main-title {
-                    font-size: 20px;
-                    font-weight: 500;
-                    line-height: 24px;
-                  }
-
-                  .item-sub-title {
-                    font-size: 15px;
-                    font-weight: 400;
-                    opacity: 0.8;
-                  }
-                }
-              }
-            }
-
-            .journey-item-line {
-              position: relative;
-              width: 100%;
-              height: 15px;
-              margin: 10px 0;
-              position: absolute;
-              top: 80px;
-
-              &:before {
-                content: '';
-                position: absolute;
-                width: 15px;
+              .journey-item-line {
+                position: relative;
+                width: 100%;
                 height: 15px;
-                background-color: #fff;
-                border-radius: 10px;
-                border: 3px solid #f40a5c;
-                left: 7px;
-              }
+                margin: 10px 0;
+                position: absolute;
+                top: 80px;
 
-              &.last-item {
                 &:before {
                   content: '';
-                  display: none;
-                }
-              }
-              &.last {
-                &:before {
-                  animation: pulse-animation 2s infinite;
-                }
-              }
-              &:after {
-                content: '';
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                margin: auto;
-                width: calc(100% - 30px);
-                height: 1px;
-                background-color: #fff;
-                margin: auto 30px;
-                opacity: 0.2;
-              }
+                  position: absolute;
+                  width: 15px;
+                  height: 15px;
+                  background-color: #fff;
+                  border-radius: 10px;
+                  border: 3px solid #f40a5c;
+                  left: 7px;
 
-              &.last-item {
+                  @media (max-width: 768px) {
+                    left: 30px;
+                    top: -39px;
+                  }
+                }
+
+                &.last-item {
+                  &:before {
+                    content: '';
+                    display: none;
+                  }
+                }
+                &.last {
+                  &:before {
+                    animation: pulse-animation 2s infinite;
+                  }
+                  &:after {
+                    @media (max-width: 768px) {
+                      display: none;
+                    }
+                  }
+                }
                 &:after {
-                  width: 30px;
-                  right: -30px;
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  margin: auto;
+                  width: calc(100% - 30px);
+                  height: 1px;
+                  background-color: #fff;
+                  margin: auto 30px;
+                  opacity: 0.2;
+
+                  @media (max-width: 768px) {
+                    width: 1px;
+                    height: 100%;
+                    left: 7px;
+                  }
+                }
+
+                &.last-item {
+                  &:after {
+                    width: 30px;
+                    right: -30px;
+                  }
                 }
               }
             }

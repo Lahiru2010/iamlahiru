@@ -1,36 +1,43 @@
 <template>
   <div class="home" v-bind:style="[!isMobileComp ? { height: windowHeightComp + 'px' } : '']">
-    {{ currentUrl }}
     <div class="home-container" v-bind:class="{ expand: isShowRemainingContent }">
-      <div class="main-title-box" v-bind:class="{ small: isShowRemainingContentBefore }">
-        <div class="main-title" v-bind:class="{ small: isShowRemainingContentBefore }">
-          <div class="text">
-            <TransitionGroup name="fade" tag="span">
-              <span v-for="item in mainTitlePart1Array" :key="item">
-                {{ item }}
-              </span>
-            </TransitionGroup>
-          </div>
-          <div class="highlight">
-            <TransitionGroup name="fade" tag="span">
-              <span v-for="item in mainTitlePart2Array" :key="item">
-                {{ item }}
-              </span>
-            </TransitionGroup>
-          </div>
-        </div>
-        <div>
-          <Transition name="slide-fade">
-            <div
-              class="sub-title"
-              v-bind:class="{ small: isShowRemainingContentBefore }"
-              v-if="isShowSubTitle"
-            >
-              I craft seamless experiences through creativity and code.
+      <Transition name="fade">
+        <div
+          class="main-title-box"
+          v-bind:class="{ small: isShowRemainingContentBefore }"
+          v-if="isPageFullyLoaded"
+        >
+          <div>
+            <div class="main-title" v-bind:class="{ small: isShowRemainingContentBefore }">
+              <div class="text">
+                <TransitionGroup name="fade" tag="span">
+                  <span v-for="item in mainTitlePart1Array" :key="item">
+                    {{ item }}
+                  </span>
+                </TransitionGroup>
+              </div>
+              <div class="highlight">
+                <TransitionGroup name="fade" tag="span">
+                  <span v-for="item in mainTitlePart2Array" :key="item">
+                    {{ item }}
+                  </span>
+                </TransitionGroup>
+              </div>
             </div>
-          </Transition>
+            <div>
+              <Transition name="slide-fade">
+                <div
+                  class="sub-title"
+                  v-bind:class="{ small: isShowRemainingContentBefore }"
+                  v-if="isShowSubTitle"
+                >
+                  I craft seamless experiences through creativity and code.
+                </div>
+              </Transition>
+            </div>
+          </div>
         </div>
-      </div>
+      </Transition>
       <div>
         <div class="brain-container" v-if="isShowRemainingContent">
           <div class="desc-item left" v-motion-slide-visible-right :duration="700" :delay="500">
@@ -152,7 +159,7 @@ export default {
       mainSubTitlePartArray: [],
       mainSubTitlePart: '',
       mainSubTitlePartStringArray: [],
-
+      isPageFullyLoaded: false,
       skills: [
         'JavaScript',
         'HTML5',
@@ -194,7 +201,9 @@ export default {
     },
   },
   mounted() {
-    // this.$refs.number1.play()
+    window.addEventListener('load', () => {
+      this.isPageFullyLoaded = true
+    })
   },
   created() {
     this.currentItem = 0
