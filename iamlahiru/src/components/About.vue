@@ -273,7 +273,7 @@ export default {
     padding-top: 0px !important;
   }
   .about-page {
-    max-width: 1400px;
+    max-width: 1280px;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -350,7 +350,7 @@ export default {
     padding: 118px 42px 42px 42px !important;
   }
   .portfolio-page {
-    max-width: 1400px;
+    max-width: 1280px;
     display: flex;
     justify-content: center;
     .portfolio-container {

@@ -339,8 +339,8 @@
       gap: 14px;
       margin-top: 3%;
       .social-icon {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         font-size: 20px;
         background-size: contain;
         transition: transform 0.3s;
@@ -348,7 +348,7 @@
         align-items: center;
         cursor: pointer;
         background-repeat: no-repeat;
-        background-size: 24px;
+        background-size: 22px;
         &.in {
           background-image: url('../images/social/in.png');
         }
@@ -365,7 +365,7 @@
           background-image: url('../images/social/be.png');
         }
         &:hover {
-          background-position-y: -24px;
+          background-position-y: -22px;
           transform: scale(1.1);
         }
       }
