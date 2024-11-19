@@ -49,6 +49,15 @@
                 >Portfolio</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                href="javascript:;"
+                class="nav-link"
+                :class="{ active: activePageComp == 3 }"
+                v-on:click="scrollToPortfolio"
+                >Contact</a
+              >
+            </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="#">Contact</a>
             </li> -->

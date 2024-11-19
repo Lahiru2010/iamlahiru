@@ -338,6 +338,7 @@ export default {
 
 <style lang="scss">
 .portfolio {
+  
   background-color: #1f1f20;
   background: linear-gradient(90deg, rgb(24 23 29) 0%, rgb(34 34 37) 49%, rgb(39 39 47) 100%);
   padding: 0 42px !important;

@@ -27,19 +27,57 @@
                       me as I continue to craft user-centered solutions that reflect my vision and
                       dedication.
                     </p>
+
+                   
                   </div>
-                </div>
-                <div class="iml-section-right">
-                  <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
-                </div>
-              </div>
+
               <a
                 href="https://iamlahiru.com/resume/Resume_Lahiru_Chathuranga.pdf"
                 target="_blank"
                 class="btn-resume"
                 >My Resume</a
               >
+                </div>
+                <div class="iml-section-right">
+                  <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
+
+                  <a
+                href="https://iamlahiru.com/resume/Resume_Lahiru_Chathuranga.pdf"
+                target="_blank"
+                class="btn-resume"
+                >My Resume</a
+              >
+                </div>
+              </div>
             </div>
+
+
+            <div class="iml-section">
+              <div class="iml-section-left">
+                <div class="iml-sub-title">My expertise</div>
+
+                  <div class="skill-percentage-container">
+                    <div class="skill-percentage-item" v-for="skill in skills" v-bind:key="skill">
+                      <div class="p-label">{{ skill.language }}</div>
+                      <div class="p-percentage">
+                        <div class="p-p-background">
+                          <div class="p-p-fill" v-bind:style="{'width':skill.percentage+'%'}"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                   
+
+                
+
+                    
+
+                </div>
+              </div>
+            </div>
+
             <div class="iml-section">
               <div class="iml-section-left">
                 <div class="iml-sub-title">Tools behind my pixel magic.</div>
@@ -67,20 +105,22 @@
                 </div>
               </div>
             </div>
+
+
           </div>
-          <div class="image-container">
+          <!-- <div class="image-container">
             <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
-          </div>
+          </div> -->
         </div>
 
         <div class="journey-container">
           <div class="iml-sub-title">A journey defined by growth.</div>
-          <div class="iml-sub-paragraph">
+          <!-- <div class="iml-sub-paragraph">
             <p>
               Here’s a glimpse of my career: I’ve worked with multidisciplinary companies on diverse
               web products.
             </p>
-          </div>
+          </div> -->
           <div class="jurney-set">
             <div class="journey-set-row first">
               <div class="journey-item up width-45">
@@ -233,7 +273,22 @@
 export default {
   name: 'about',
   data() {
-    return {}
+    return {
+      skills:[
+        {language:'Front-end Development',percentage:90},
+        {language:'HTML5/CSS3',percentage:90},
+        {language:'jQuery',percentage:80},
+        {language:'Vue.js',percentage:85},
+        {language:'Angular',percentage:65},
+        {language:'React',percentage:65},
+        {language:'UI/UX Designing',percentage:85},
+        {language:'Wireframing & Prototyping',percentage:80},
+        {language:'Drawing and Illustration',percentage:70},
+        {language:'Typography',percentage:60},
+        {language:'Branding',percentage:70},
+        {language:'Time Management',percentage:90},
+    ]
+    }
   },
   props: {
     msg: String,
@@ -264,6 +319,7 @@ export default {
   display: flex;
   justify-content: center;
   padding-top: 150px !important;
+  padding-bottom: 150px !important;
 
   @media (max-width: 1600px) {
     padding-top: 122px !important;
@@ -286,8 +342,7 @@ export default {
         display: flex;
       }
       .about-details-container {
-        width: 70%;
-        padding-right: 120px;
+        width: 100%;
         box-sizing: border-box;
 
         @media (max-width: 992px) {
@@ -295,16 +350,49 @@ export default {
         }
         .iml-section {
           padding: 30px 0;
+          .iml-section-inner {
+            display: flex;
 
-          @media (max-width: 1200px) {
-            .iml-section-inner {
-              display: flex;
+            .iml-section-left {
+width: 65%;
 
-              .iml-section-right {
+@media (max-width: 992px) {
+a{
+  display: none;
+}
+}
+@media (max-width: 992px) {
+width: 100%;
+
+}
+            }
+            .iml-section-right {
                 display: flex;
+                flex-direction: column;
                 align-items: center;
+                width: 35%;
+
+                a{
+                  display: none;
+                }
+                @media (max-width: 992px) {
+width: 100%;
+
+a{
+                  display: block;
+                }
+
+}
                 img {
-                  width: 288px;
+                  width: 100%;
+                  max-width: 380px;
+                }
+          @media (max-width: 1200px) {
+           
+
+             
+                img {
+                  width: 100%;
                 }
               }
             }
@@ -320,12 +408,9 @@ export default {
               }
             }
           }
-          @media (min-width: 1200px) {
-            .iml-section-right {
-              display: none;
-            }
-          }
+         
           .iml-section-left {
+
             .skill-icons-container {
               .skill-icon-row {
                 display: flex;
@@ -334,6 +419,7 @@ export default {
                 flex-wrap: wrap;
                 max-width: 400px;
                 max-width: 800px;
+                padding-top: 20px;
                 .skill-icon {
                   width: 70px;
                   height: 70px;
@@ -462,7 +548,6 @@ export default {
           width: 100%;
           height: fit-content;
           position: relative;
-          padding-top: 50px;
           overflow: hidden;
 
           .journey-set-row {
@@ -476,22 +561,21 @@ export default {
               padding: 0 0px;
             }
             &:after {
-              content: '';
-              width: 1px;
-              height: 121px;
-              position: absolute;
-              background-color: #fff;
-              right: 0;
-              bottom: 114px;
-              opacity: 0.2;
+              content: "";
+    width: 1px;
+    height: 121px;
+    position: absolute;
+    background-color: #fff;
+    right: 0;
+    bottom: 25%;
+    opacity: 0.2;
 
               @media (max-width: 768px) {
                 display: none;
               }
             }
             &.first {
-              &:after {
-                top: 148px;
+              &:after {top: 98px;
               }
             }
 
