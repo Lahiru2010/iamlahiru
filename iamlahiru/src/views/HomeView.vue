@@ -3,6 +3,7 @@
     @scrollToPortfolioView="scrollToPortfolio"
     @scrollToAboutView="scrollToAbout"
     @scrollToHomeView="scrollToHome"
+    @scrollToContactView="scrollToContact"
   ></HeaderComponent>
   <div ref="homeRef">
     <Home></Home>
@@ -12,6 +13,9 @@
   </div>
   <div ref="portfolioRef">
     <Portfolio></Portfolio>
+  </div>  
+  <div ref="contactRef">
+    <Contact></Contact>
   </div>
 </template>
 
@@ -20,6 +24,7 @@ import HeaderComponent from '../components/Header.vue'
 import Home from '../components/Home.vue'
 import About from '../components/About.vue'
 import Portfolio from '../components/Portfolio.vue'
+import Contact from '../components/Contact.vue'
 export default {
   name: 'HomeView',
   data() {
@@ -33,6 +38,7 @@ export default {
     Home,
     About,
     Portfolio,
+    Contact,
   },
   computed: {
     windowHeightComp: function () {
@@ -56,6 +62,11 @@ export default {
     window.removeEventListener('scroll', this.handleScroll)
   },
   methods: {
+    scrollToContact: function () {
+      const refVar = 'contactRef'
+      this.$store.commit('setActivePage', 4)
+      this.$refs[refVar].scrollIntoView({ behavior: 'smooth' })
+    },    
     scrollToPortfolio: function () {
       const refVar = 'portfolioRef'
       this.$store.commit('setActivePage', 3)
@@ -84,6 +95,7 @@ export default {
       const aboutTop = this.$refs.aboutRef.getBoundingClientRect().top
       const homeTop = this.$refs.homeRef.getBoundingClientRect().top
       const portfolioTop = this.$refs.portfolioRef.getBoundingClientRect().top
+      const contactTop = this.$refs.contactRef.getBoundingClientRect().top
       if (homeTop < 100) {
         this.$store.commit('setIsScrollDark', false)
         this.$store.commit('setActivePage', 1)
@@ -94,6 +106,8 @@ export default {
       }
       if (portfolioTop < 100) {
         this.$store.commit('setActivePage', 3)
+      }      if (contactTop < 100) {
+        this.$store.commit('setActivePage', 4)
       }
 
       console.info('top :' + top)

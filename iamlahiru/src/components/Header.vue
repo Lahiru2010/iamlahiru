@@ -53,14 +53,11 @@
               <a
                 href="javascript:;"
                 class="nav-link"
-                :class="{ active: activePageComp == 3 }"
-                v-on:click="scrollToPortfolio"
+                :class="{ active: activePageComp == 4 }"
+                v-on:click="scrollToContact"
                 >Contact</a
               >
             </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li> -->
           </ul>
         </div>
       </div>
@@ -82,7 +79,7 @@ export default {
       currentUrl: location.toString(),
     }
   },
-  emits: ['scrollToAboutView', 'scrollToHomeView', 'scrollToPortfolioView'],
+  emits: ['scrollToAboutView', 'scrollToHomeView', 'scrollToPortfolioView','scrollToContactView'],
   props: {
     msg: String,
   },
@@ -99,9 +96,17 @@ export default {
     },
   },
   methods: {
-    scrollToPortfolio: function () {
+    scrollToContact: function () {
       this.isHome = false
       this.isAbout = false
+      this.isPortfolio = false
+      this.isContact = true
+      this.$emit('scrollToContactView')
+    },   
+     scrollToPortfolio: function () {
+      this.isHome = false
+      this.isAbout = false
+      this.isContact = false
       this.isPortfolio = true
 
       this.$emit('scrollToPortfolioView')
@@ -109,12 +114,14 @@ export default {
     scrollToAbout: function () {
       this.isHome = false
       this.isAbout = true
+      this.isContact = false
       this.isPortfolio = false
       this.$emit('scrollToAboutView')
     },
     scrollToHome: function () {
       this.isHome = true
       this.isAbout = false
+      this.isContact = false
       this.isPortfolio = false
       this.$emit('scrollToHomeView')
     },

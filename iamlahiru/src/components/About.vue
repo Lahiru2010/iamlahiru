@@ -791,7 +791,7 @@ a{
                     }
                     .item-sub-label {
                       font-size: 11px;
-                      background-color: #f40a5c;
+                      background-color: #ff0059;
                       color: #fff;
                       width: fit-content;
                       border-radius: 50px;
@@ -881,7 +881,7 @@ a{
 
 @keyframes pulse-animation {
   0% {
-    box-shadow: 0 0 0 0px #f40a5c;
+    box-shadow: 0 0 0 0px #ff0059;
   }
   100% {
     box-shadow: 0 0 0 30px #f40a5c00;
