@@ -38,8 +38,12 @@
           </div>
         </div>
       </Transition>
-      <div>
-        <div class="brain-container" v-if="isShowRemainingContent">
+      <div ref="brainSectionRef">
+        <div
+          class="brain-container"
+          v-bind:class="{ 'hide-brain-container': !isVisibleBrainContainer }"
+          v-if="isShowRemainingContent"
+        >
           <div class="desc-item left" v-motion-slide-visible-right :duration="700" :delay="500">
             <div class="desc-title">&lt;developer&gt;</div>
             <div class="desc-subtitle">
@@ -147,6 +151,7 @@ export default {
       isShowSubTitle: false,
       isShowRemainingContentBefore: false,
       isShowRemainingContentAfter: false,
+      isVisibleBrainContainer: true,
 
       mainTitlePart1Array: [],
       mainTitlePart1: '',
@@ -199,11 +204,27 @@ export default {
     theFormat(number) {
       return number.toFixed(0) + '%'
     },
+    handleScroll() {
+      const brainSectionRefTop = this.$refs.brainSectionRef.getBoundingClientRect().top
+
+      if (brainSectionRefTop < this.windowHeightComp && brainSectionRefTop > 100) {
+        this.isVisibleBrainContainer = true
+      } else {
+        this.isVisibleBrainContainer = false
+      }
+    },
   },
   mounted() {
     window.addEventListener('load', () => {
       this.isPageFullyLoaded = true
     })
+
+    this.$nextTick(() => {
+      window.addEventListener('scroll', this.handleScroll)
+    })
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   created() {
     this.currentItem = 0

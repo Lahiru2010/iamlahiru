@@ -13,7 +13,7 @@
   </div>
   <div ref="portfolioRef">
     <Portfolio></Portfolio>
-  </div>  
+  </div>
   <div ref="contactRef">
     <Contact></Contact>
   </div>
@@ -66,7 +66,7 @@ export default {
       const refVar = 'contactRef'
       this.$store.commit('setActivePage', 4)
       this.$refs[refVar].scrollIntoView({ behavior: 'smooth' })
-    },    
+    },
     scrollToPortfolio: function () {
       const refVar = 'portfolioRef'
       this.$store.commit('setActivePage', 3)
@@ -96,6 +96,7 @@ export default {
       const homeTop = this.$refs.homeRef.getBoundingClientRect().top
       const portfolioTop = this.$refs.portfolioRef.getBoundingClientRect().top
       const contactTop = this.$refs.contactRef.getBoundingClientRect().top
+
       if (homeTop < 100) {
         this.$store.commit('setIsScrollDark', false)
         this.$store.commit('setActivePage', 1)
@@ -106,7 +107,8 @@ export default {
       }
       if (portfolioTop < 100) {
         this.$store.commit('setActivePage', 3)
-      }      if (contactTop < 100) {
+      }
+      if (contactTop < 100) {
         this.$store.commit('setActivePage', 4)
       }
 

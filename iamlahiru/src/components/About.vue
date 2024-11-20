@@ -27,86 +27,63 @@
                       me as I continue to craft user-centered solutions that reflect my vision and
                       dedication.
                     </p>
-
-                   
                   </div>
 
-              <a
-                href="https://iamlahiru.com/resume/Resume_Lahiru_Chathuranga.pdf"
-                target="_blank"
-                class="btn-resume"
-                >My Resume</a
-              >
+                  <a
+                    href="https://iamlahiru.com/resume/Resume_Lahiru_Chathuranga.pdf"
+                    target="_blank"
+                    class="btn-resume"
+                    >My Resume</a
+                  >
                 </div>
                 <div class="iml-section-right">
                   <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
 
                   <a
-                href="https://iamlahiru.com/resume/Resume_Lahiru_Chathuranga.pdf"
-                target="_blank"
-                class="btn-resume"
-                >My Resume</a
-              >
+                    href="https://iamlahiru.com/resume/Resume_Lahiru_Chathuranga.pdf"
+                    target="_blank"
+                    class="btn-resume"
+                    >My Resume</a
+                  >
                 </div>
               </div>
             </div>
 
-
-            <div class="iml-section">
-              <div class="iml-section-left">
+            <div class="iml-section skill-percentage-section" ref="skillPercentageRef">
+              <div class="iml-section-left" v-if="isSkillPercentageVisible">
                 <div class="iml-sub-title">My expertise</div>
 
-                  <div class="skill-percentage-container">
-                    <div class="skill-percentage-item" v-for="skill in skills" v-bind:key="skill">
-                      <div class="p-label">{{ skill.language }}</div>
-                      <div class="p-percentage">
-                        <div class="p-p-background">
-                          <div class="p-p-fill" v-bind:style="{'width':skill.percentage+'%'}"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="clearfix"></div>
-
-                   
-
-                
-
-                    
-
+                <div class="skill-percentage-container">
+                  <div>
+                    <skillPercentageItem
+                      v-for="(skill, index) in skillsPercentage"
+                      v-bind:key="skill"
+                      :skill="skill"
+                      :index="index"
+                    ></skillPercentageItem>
+                  </div>
+                  <div class="clearfix"></div>
                 </div>
               </div>
             </div>
 
-            <div class="iml-section">
-              <div class="iml-section-left">
+            <div class="iml-section skill-icon-section" ref="iconSkillRef">
+              <div class="iml-section-left" v-if="isSkillIconsVisible">
                 <div class="iml-sub-title">Tools behind my pixel magic.</div>
                 <div class="para-content">
                   <div class="skill-icons-container">
                     <div class="skill-icon-row">
-                      <div class="skill-icon js" v-tooltip="'JavaScript'"></div>
-                      <div class="skill-icon html" v-tooltip="'HTML5'"></div>
-                      <div class="skill-icon css" v-tooltip="'CSS3'"></div>
-                      <div class="skill-icon jquery" v-tooltip="'jQuery'"></div>
-                      <div class="skill-icon vue" v-tooltip="'Vue.js'"></div>
-                      <div class="skill-icon angular" v-tooltip="'Angular'"></div>
-                      <div class="skill-icon react" v-tooltip="'React'"></div>
-                      <div class="skill-icon github" v-tooltip="'github'"></div>
-                      <div class="skill-icon npm" v-tooltip="'npm'"></div>
-                      <div class="skill-icon sass" v-tooltip="'Sass'"></div>
-                      <div class="skill-icon bootstrap" v-tooltip="'Bootstrap'"></div>
-                      <div class="skill-icon vscode" v-tooltip="'Visual Studio Code'"></div>
-                      <div class="skill-icon ps" v-tooltip="'Adobe Photoshop'"></div>
-                      <div class="skill-icon ai" v-tooltip="'Adobe Illustrator'"></div>
-                      <div class="skill-icon xd" v-tooltip="'Adobe XD'"></div>
-                      <div class="skill-icon figma" v-tooltip="'Figma'"></div>
+                      <skillItem
+                        v-for="(skill, indexSkill) in skills"
+                        v-bind:key="skill"
+                        :skill="skill"
+                        :index="indexSkill"
+                      ></skillItem>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-
-
           </div>
           <!-- <div class="image-container">
             <img src="../assets/images/my-self.png" alt="Lahiru Chathuranga" />
@@ -270,24 +247,46 @@
 </template>
 
 <script>
+import skillPercentageItem from './skillPercentageItem.vue'
+import skillItem from './SkillItem.vue'
 export default {
   name: 'about',
   data() {
     return {
-      skills:[
-        {language:'Front-end Development',percentage:90},
-        {language:'HTML5/CSS3',percentage:90},
-        {language:'jQuery',percentage:80},
-        {language:'Vue.js',percentage:85},
-        {language:'Angular',percentage:65},
-        {language:'React',percentage:65},
-        {language:'UI/UX Designing',percentage:85},
-        {language:'Wireframing & Prototyping',percentage:80},
-        {language:'Drawing and Illustration',percentage:70},
-        {language:'Typography',percentage:60},
-        {language:'Branding',percentage:70},
-        {language:'Time Management',percentage:90},
-    ]
+      skillsPercentage: [
+        { language: 'Front-end Development', percentage: 90 },
+        { language: 'HTML5/CSS3', percentage: 90 },
+        { language: 'Vue.js', percentage: 85 },
+        { language: 'jQuery', percentage: 80 },
+        { language: 'Angular', percentage: 65 },
+        { language: 'React', percentage: 65 },
+        { language: 'UI/UX Designing', percentage: 85 },
+        { language: 'Wireframing & Prototyping', percentage: 80 },
+        { language: 'Drawing and Illustration', percentage: 70 },
+        { language: 'Typography', percentage: 60 },
+        { language: 'Branding', percentage: 70 },
+        { language: 'Time Management', percentage: 90 },
+      ],
+      skills: [
+        { tooltip: 'JavaScript', class: 'js' },
+        { tooltip: 'HTML5', class: 'html' },
+        { tooltip: 'CSS3', class: 'css' },
+        { tooltip: 'Vue.js', class: 'vue' },
+        { tooltip: 'Angular', class: 'angular' },
+        { tooltip: 'React', class: 'react' },
+        { tooltip: 'jQuery', class: 'jquery' },
+        { tooltip: 'Github', class: 'github' },
+        { tooltip: 'npm', class: 'npm' },
+        { tooltip: 'Sass', class: 'sass' },
+        { tooltip: 'Bootstrap', class: 'bootstrap' },
+        { tooltip: 'Visual Studio Code', class: 'vscode' },
+        { tooltip: 'Adobe Photoshop', class: 'ps' },
+        { tooltip: 'Adobe Illustrator', class: 'ai' },
+        { tooltip: 'Adobe Xd', class: 'xd' },
+        { tooltip: 'Figma', class: 'figma' },
+      ],
+      isSkillIconsVisible: true,
+      isSkillPercentageVisible: true,
     }
   },
   props: {
@@ -300,11 +299,42 @@ export default {
     isMobileComp: function () {
       return this.$store.state.isMobile
     },
+    activePageComp: function () {
+      return this.$store.state.activePage
+    },
   },
-  components: {},
+  components: { skillPercentageItem, skillItem },
 
-  methods: {},
-  mounted() {},
+  methods: {
+    handleScroll() {
+      const iconSkillRefTop = this.$refs.iconSkillRef.getBoundingClientRect().top
+      const skillPercentageRefTop = this.$refs.skillPercentageRef.getBoundingClientRect().top
+      // const iconSkillRefBottom = this.$refs.iconSkillRef.getBoundingClientRect().bottom
+      console.info(
+        'windowHeightComp :' + this.windowHeightComp + ' iconSkillRefTop : ' + iconSkillRefTop,
+      )
+
+      if (skillPercentageRefTop < this.windowHeightComp && skillPercentageRefTop > 100) {
+        this.isSkillPercentageVisible = true
+      } else {
+        this.isSkillPercentageVisible = false
+      }
+
+      if (iconSkillRefTop < this.windowHeightComp && iconSkillRefTop > 100) {
+        this.isSkillIconsVisible = true
+      } else {
+        this.isSkillIconsVisible = false
+      }
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('scroll', this.handleScroll)
+    })
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
   unmounted() {},
   created() {},
 }
@@ -354,43 +384,38 @@ export default {
             display: flex;
 
             .iml-section-left {
-width: 65%;
+              width: 65%;
 
-@media (max-width: 992px) {
-a{
-  display: none;
-}
-}
-@media (max-width: 992px) {
-width: 100%;
-
-}
-            }
-            .iml-section-right {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 35%;
-
-                a{
+              @media (max-width: 992px) {
+                a {
                   display: none;
                 }
-                @media (max-width: 992px) {
-width: 100%;
+              }
+              @media (max-width: 992px) {
+                width: 100%;
+              }
+            }
+            .iml-section-right {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 35%;
 
-a{
+              a {
+                display: none;
+              }
+              @media (max-width: 992px) {
+                width: 100%;
+
+                a {
                   display: block;
                 }
-
-}
-                img {
-                  width: 100%;
-                  max-width: 380px;
-                }
-          @media (max-width: 1200px) {
-           
-
-             
+              }
+              img {
+                width: 100%;
+                max-width: 380px;
+              }
+              @media (max-width: 1200px) {
                 img {
                   width: 100%;
                 }
@@ -408,10 +433,10 @@ a{
               }
             }
           }
-         
-          .iml-section-left {
 
+          .iml-section-left {
             .skill-icons-container {
+              min-height: 190px;
               .skill-icon-row {
                 display: flex;
                 gap: 30px;
@@ -512,6 +537,13 @@ a{
               transform: scale(1);
             }
           }
+
+          &.skill-percentage-section {
+            min-height: 362px;
+          }
+          &.skill-icon-section {
+            min-height: 368px;
+          }
         }
       }
 
@@ -561,27 +593,32 @@ a{
               padding: 0 0px;
             }
             &:after {
-              content: "";
-    width: 1px;
-    height: 121px;
-    position: absolute;
-    background-color: #fff;
-    right: 0;
-    bottom: 25%;
-    opacity: 0.2;
+              content: '';
+              width: 1px;
+              height: 121px;
+              position: absolute;
+              background-color: #fff;
+              right: 0;
+              bottom: 25%;
+              opacity: 0.2;
 
               @media (max-width: 768px) {
                 display: none;
               }
             }
             &.first {
-              &:after {top: 98px;
+              &:after {
+                top: 98px;
               }
             }
 
             .journey-item {
               width: 25%;
               position: relative;
+
+              @media (min-width: 992px) {
+                width: 100%;
+              }
               &.width-45 {
                 width: 45%;
               }
@@ -723,9 +760,11 @@ a{
                 // align-items: center;
                 gap: 3px;
                 position: absolute;
-                width: 500px;
                 top: 14px;
 
+                @media (min-width: 992px) {
+                  width: 500px;
+                }
                 @media (max-width: 768px) {
                   position: relative;
                   top: initial;
@@ -886,5 +925,17 @@ a{
   100% {
     box-shadow: 0 0 0 30px #f40a5c00;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease-out;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

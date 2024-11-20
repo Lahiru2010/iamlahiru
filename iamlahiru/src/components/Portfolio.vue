@@ -87,26 +87,26 @@ export default {
           ],
           referenceLink: 'https://www.findmyfare.com/',
         },
-        {
-          name: 'Eden Waste Solution',
-          title: 'Eden Waste Solution',
-          subTitle: 'Waste management website',
-          description: 'Eden Waste Solution is a waste management company based in Australia.',
-          image: 'https://iamlahiru.com/portfolio-bg/eden.png',
-          cover: 'https://iamlahiru.com/portfolio-bg/ew_cover.png',
-          primaryColors: ['#036001', '#f0f0f0'],
-          designTech: [
-            { label: 'Adobe Photoshop', icon: 'ps' },
-            { label: 'Adobe Illustrator', icon: 'ai' },
-          ],
-          devTech: [
-            { label: 'HTML', icon: 'html' },
-            { label: 'CSS', icon: 'css' },
-            { label: 'JavaScript', icon: 'js' },
-            { label: 'Sass', icon: 'sass' },
-          ],
-          referenceLink: 'https://www.edenwaste.com.au/',
-        },
+        // {
+        //   name: 'Eden Waste Solution',
+        //   title: 'Eden Waste Solution',
+        //   subTitle: 'Waste management website',
+        //   description: 'Eden Waste Solution is a waste management company based in Australia.',
+        //   image: 'https://iamlahiru.com/portfolio-bg/eden.png',
+        //   cover: 'https://iamlahiru.com/portfolio-bg/ew_cover.png',
+        //   primaryColors: ['#036001', '#f0f0f0'],
+        //   designTech: [
+        //     { label: 'Adobe Photoshop', icon: 'ps' },
+        //     { label: 'Adobe Illustrator', icon: 'ai' },
+        //   ],
+        //   devTech: [
+        //     { label: 'HTML', icon: 'html' },
+        //     { label: 'CSS', icon: 'css' },
+        //     { label: 'JavaScript', icon: 'js' },
+        //     { label: 'Sass', icon: 'sass' },
+        //   ],
+        //   referenceLink: 'https://www.edenwaste.com.au/',
+        // },
         {
           name: 'EB Creasy website',
           title: 'EB Creasy',
@@ -338,7 +338,6 @@ export default {
 
 <style lang="scss">
 .portfolio {
-  
   background-color: #1f1f20;
   background: linear-gradient(90deg, rgb(24 23 29) 0%, rgb(34 34 37) 49%, rgb(39 39 47) 100%);
   padding: 0 42px !important;
